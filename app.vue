@@ -6,6 +6,20 @@
   </NuxtLayout>
 </template>
 
+<script setup>
+if (process.client) {
+  const { initTheme } = useTheme()
+  const theme = localStorage.getItem('theme') ?? useAppConfig().theme
+  initTheme(theme)
+  window.addEventListener(
+    "storage",
+    initTheme(localStorage.getItem('theme') ?? useAppConfig().theme)
+  );
+}
+
+
+</script>
+
 <style lang="scss">
 @import "~/assets/style/main.scss";
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="main">
+    <div class="main withAnimation">
       <h1 class="title">{{ data.title }}</h1>
       <p class="description">{{ data.description }}</p>
 
@@ -17,14 +17,6 @@
 </template>
 
 <script setup>
-const version = useStrapiVersion()
-console.log(version);
-
-
-
-
-
-
 const data = {
   title: "Hello SSR!",
   description: "A Demo for 《深入浅出SSR官网开发指南》",
@@ -66,6 +58,8 @@ const data = {
 <style lang="scss"  scoped>
 .container {
   padding: 0 2rem;
+  background-color: var(--primary-background-color);
+  color: var(--primary-color);
 
   .main {
     min-height: 100vh;
@@ -80,18 +74,6 @@ const data = {
       margin: 0;
       line-height: 1.15;
       font-size: 4rem;
-
-      & a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      & a:hover,
-      & a:focus,
-      & a:active {
-        text-decoration: underline;
-      }
-
     }
 
     .title,
@@ -118,7 +100,7 @@ const data = {
         text-align: left;
         color: inherit;
         text-decoration: none;
-        border: 1px solid #eaeaea;
+        border: 1px solid var(--border-color);
         border-radius: 10px;
         transition: color 0.15s ease, border-color 0.15s ease;
         max-width: 300px;
@@ -143,6 +125,190 @@ const data = {
         }
       }
     }
+  }
+}
+
+
+// ./pages/index.module.scss
+// ...
+
+.withAnimation {
+  .title {
+    animation: fadeInDown1 1s;
+  }
+
+  .description {
+    animation: fadeInDown2 1s;
+  }
+
+  .card:nth-of-type(1) {
+    animation: fadeInDown3 1s;
+  }
+
+  .card:nth-of-type(2) {
+    animation: fadeInDown4 1s;
+  }
+
+  .card:nth-of-type(3) {
+    animation: fadeInDown5 1s;
+  }
+
+  .card:nth-of-type(4) {
+    animation: fadeInDown6 1s;
+  }
+
+  .card:nth-of-type(5) {
+    animation: fadeInDown7 1s;
+  }
+
+  .card:nth-of-type(6) {
+    animation: fadeInDown8 1s;
+  }
+}
+
+// ..
+
+@keyframes fadeInDown1 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  11% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown2 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  22% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown3 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  33% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown4 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  44% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown5 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  55% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown6 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown7 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  77% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown8 {
+  0% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  88% {
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
   }
 }
 </style>
